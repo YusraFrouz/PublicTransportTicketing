@@ -5,6 +5,7 @@
  */
 package controllers;
 
+import static controllers.JourneyList.file;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -13,54 +14,41 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
-import java.util.Date;
-import models.Journey;
+import models.Transaction;
 
 /**
  *
  * @author bhagyaangelo
  */
-public class JourneyList extends ArrayList<Journey>{
-   
-    private Journey Journey;
-    ArrayList<Journey> journeyArr = new ArrayList<Journey>();
-    ArrayList<Journey> journey2 = new ArrayList<Journey>();
-    public static final File file = new File("Journey.txt");
-    private JourneyList journeyList ;
+public class TransactionList extends ArrayList<Transaction>{
+    private Transaction Transaction;
+    ArrayList<Transaction> transactionArr = new ArrayList<Transaction>();
+    ArrayList<Transaction> transaction2 = new ArrayList<Transaction>();
+    public static final File file = new File("Transaction.txt");
+    private TransactionList transactionList ;
     private int count;
     
-    public JourneyList()  
-{
-    journeyArr = Deserialize(file);
-    count  = journeyArr.size();
-    Journey.setJourneyCount(count);
-    
-    //super();
-}
-    public void addJourney(Journey journey)
-{
-    //super.add(aBook);
-    this.Journey = journey; 
-    journeyArr = Deserialize(file);
-    journeyArr.add(Journey);
-    Serialize(journeyArr);
-      
-}
-    public ArrayList findJourneysByDate (Date jdate)
- {
-    //books2 = null;
-    journeyArr = Deserialize(file);
-    for (Journey i : journeyArr){
-        if (i.getJourneyDate().equals(jdate)){
-            journey2.add(i);
-        }
+    public TransactionList(){
+        transactionArr = Deserialize(file);
+        count  = transactionArr.size();
+        Transaction.setTransactionCount(count);
     }
-    return journey2;
-}
-    public int getTotalJourneys(){
-        journeyArr = Deserialize(file);
-        count  = journeyArr.size();
-        return count;
+    
+    public void addTransaction(Transaction Transaction)
+    {
+        //super.add(aBook);
+        this.Transaction = Transaction; 
+        transactionArr = Deserialize(file);
+        transactionArr.add(Transaction);
+        Serialize(transactionArr);
+      
+    }
+    
+    public ArrayList getTransactions ()
+    {
+        //books2 = null;
+        transactionArr = Deserialize(file);
+        return transactionArr;
     }
     
     public void Serialize( ArrayList arraylist){
@@ -104,4 +92,5 @@ public class JourneyList extends ArrayList<Journey>{
         
         return d_arraylist;
     }
+
 }

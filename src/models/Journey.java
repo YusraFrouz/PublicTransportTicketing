@@ -6,7 +6,7 @@ import java.util.Date;
 
 /**
  *
- * @author Siri@MnS
+ * @author bhagyaangelo
  */
 public class Journey implements Serializable  {
     
@@ -38,6 +38,10 @@ public class Journey implements Serializable  {
     
     public void endJourney(NetworkStop networkStop, float charge){
     //reduce the amount from account balance.. check if this is to be implemented in another class
+    }
+    
+    public void hasEnded(){
+    
     }
 
     public static int getJourneyCount() {
