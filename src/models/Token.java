@@ -9,7 +9,7 @@ package models;
  *
  * @author Nadya Sirimanna
  */
-public class token {
+public class Token {
     private String tokenID;
     //private journey JourneyList;
     

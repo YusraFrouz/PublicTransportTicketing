@@ -35,6 +35,8 @@ public class account_UI extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,26 +63,34 @@ public class account_UI extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Get New Token");
         jPanel1.add(jButton1);
-        jButton1.setBounds(300, 300, 170, 60);
+        jButton1.setBounds(310, 370, 170, 60);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("View");
         jPanel1.add(jButton2);
-        jButton2.setBounds(320, 160, 120, 60);
+        jButton2.setBounds(330, 230, 120, 60);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Enter Token Number :");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(180, 110, 230, 22);
+        jLabel1.setBounds(190, 180, 230, 22);
 
         jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jTextField1);
-        jTextField1.setBounds(390, 110, 250, 28);
+        jTextField1.setBounds(400, 180, 250, 28);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("or");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(370, 240, 20, 40);
+        jLabel2.setBounds(380, 310, 20, 40);
+
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(200, 10, 440, 140);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -149,6 +159,8 @@ public class account_UI extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JToggleButton jToggleButton1;

@@ -6,12 +6,12 @@
 package controllers;
 
 import java.util.ArrayList;
-import models.token;
+import models.Token;
 
 /**
  *
  * @author Nadya Sirimanna
  */
-public class tokenList extends ArrayList<models.token> {
+public class tokenList extends ArrayList<models.Token> {
     
 }
