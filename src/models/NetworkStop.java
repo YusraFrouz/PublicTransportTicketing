@@ -15,18 +15,18 @@ public class NetworkStop {
     
     private int networkStopID;
     private Float minimumCharge;
-    private Network network;
-    private Route route;
+    //private Network network;
+    //private Route route;
     
 
 
 
- public NetworkStop(int networkStopID,Float minimumCharge, Network network, Route route){
+ public NetworkStop(int networkStopID,Float minimumCharge){
     
         this.networkStopID = networkStopID;
         this.minimumCharge = minimumCharge;
-        this.network = network;
-        this.route = route;
+        //this.network = network;
+        //this.route = route;
            
     }
 
