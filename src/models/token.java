@@ -12,4 +12,20 @@ package models;
 public class token {
     private String tokenID;
     //private journey JourneyList;
+    
+    public token(){
+    
+    }
+    public double getBalannce(){
+        return 0.0;
+    }
+    public void getJourneys(){}
+    public void getTodaysJourneys(){}
+    public void isValid(){}
+    public void recordJourney(String stop){}
+    //public void addJourney(Journey journey){}
+    public void recordPayment(String option, float amount){}
+    public void hasCredit(){}
+    
+    
 }
