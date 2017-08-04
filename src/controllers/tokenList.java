@@ -5,10 +5,13 @@
  */
 package controllers;
 
+import java.util.ArrayList;
+import models.token;
+
 /**
  *
  * @author Nadya Sirimanna
  */
-public class tokenList {
+public class tokenList extends ArrayList<models.token> {
     
 }

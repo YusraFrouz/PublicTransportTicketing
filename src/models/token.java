@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package controllers;
+package models;
 
 /**
  *
  * @author Nadya Sirimanna
  */
 public class token {
-    
+    private String tokenID;
+    //private journey JourneyList;
 }
