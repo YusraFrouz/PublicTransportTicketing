@@ -13,7 +13,7 @@ public class Token {
     private String tokenID;
     //private journey JourneyList;
     
-    public token(){
+    public Token(){
     
     }
     public double getBalannce(){
