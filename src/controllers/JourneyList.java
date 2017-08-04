@@ -62,6 +62,10 @@ public class JourneyList extends ArrayList<Journey>{
         count  = journeyArr.size();
         return count;
     }
+    public ArrayList getJourneys(){
+        journeyArr = Deserialize(file);
+        return journeyArr;
+    }
     
     public void Serialize( ArrayList arraylist){
         try{

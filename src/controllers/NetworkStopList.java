@@ -5,7 +5,8 @@
  */
 package controllers;
 
-import models.NetworkStop;
+import java.util.ArrayList;
+import models.Network;
 import models.NetworkStop;
 
 /**
@@ -15,10 +16,13 @@ import models.NetworkStop;
 public class NetworkStopList {
     
     private NetworkStop networkStop[];
-
-    public NetworkStop[] getNetworkStop() {
-        return networkStop;
+    ArrayList<Network> networkArr = new ArrayList<Network>();
+    
+    public ArrayList getNetworkStops() {
+        
+        return networkArr;
     }
+    
     
     
     

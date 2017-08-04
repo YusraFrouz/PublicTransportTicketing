@@ -5,7 +5,7 @@
  */
 package controllers;
 
-import models.Token;
+import models.token;
 import models.TransactionLIst;
 
 /**
@@ -13,23 +13,35 @@ import models.TransactionLIst;
  * @author Yusra Frouz
  */
 public class Account {
-    private Token tokens[]; 
+    private token tokens[]; 
     private TransactionLIst transactions[];
     private float Balance;
+    private float balance; //added by nadya
+
+    public float getBalance() {
+        //Nadya
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        //Nadya
+        this.balance = balance;
+    }
     
-    public Token[] getToken(tokens) {
+    
+    public token[] getToken(tokens) {
         return tokens;
     }
     
-    public Token[] addtken(){
+    public token[] addtken(){
         return tokens;
     }
     
-    public Token[] getBalace(){
+    public token[] getBalace(){
         return balance;
     }
     
-    public Token[] updateBalance(){
+    public token[] updateBalance(){
         return ammount;
     }
     
