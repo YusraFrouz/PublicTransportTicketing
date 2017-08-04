@@ -135,7 +135,7 @@ public class CardPaymentUI extends javax.swing.JFrame {
         EnterAmount.setLayout(EnterAmountLayout);
         EnterAmountLayout.setHorizontalGroup(
             EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 577, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
             .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(EnterAmountLayout.createSequentialGroup()
                     .addGap(190, 190, 190)
@@ -190,7 +190,7 @@ public class CardPaymentUI extends javax.swing.JFrame {
         );
         EnterAmountLayout.setVerticalGroup(
             EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 533, Short.MAX_VALUE)
+            .addGap(0, 512, Short.MAX_VALUE)
             .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(EnterAmountLayout.createSequentialGroup()
                     .addGap(37, 37, 37)
