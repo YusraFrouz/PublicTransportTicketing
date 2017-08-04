@@ -7,12 +7,8 @@ package models;
 
 /**
  *
- * @author bhagyaangelo
+ * @author Nadya Sirimanna
  */
-public class Transaction {
-    
-    
-    
-    
+class Network {
     
 }
