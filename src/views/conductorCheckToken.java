@@ -9,12 +9,12 @@ package views;
  *
  * @author Yusra Frouz
  */
-public class conductorShiftSelect extends javax.swing.JFrame {
+public class conductorCheckToken extends javax.swing.JFrame {
 
     /**
-     * Creates new form conductorShiftSelect
+     * Creates new form conductorChcekToken
      */
-    public conductorShiftSelect() {
+    public conductorCheckToken() {
         initComponents();
     }
 
@@ -28,23 +28,25 @@ public class conductorShiftSelect extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        selectnetwork = new javax.swing.JComboBox<>();
-        selectroute = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jButton3 = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(null);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
-        jPanel1.add(jLabel7);
-        jLabel7.setBounds(200, 10, 440, 140);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(200, 10, 440, 140);
 
         jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/back.png"))); // NOI18N
         jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -64,44 +66,59 @@ public class conductorShiftSelect extends javax.swing.JFrame {
         jPanel1.add(jToggleButton2);
         jToggleButton2.setBounds(740, 20, 30, 30);
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Enter Shift Details");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 190, 150, 22);
-
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("//get emp name here");
+        jLabel2.setText("Enter Journey          :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(320, 230, 250, 22);
+        jLabel2.setBounds(60, 250, 190, 22);
 
-        selectnetwork.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        selectnetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select Network --" }));
-        jPanel1.add(selectnetwork);
-        selectnetwork.setBounds(320, 270, 190, 30);
+        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton2.setText("Start Journey");
+        jPanel1.add(jButton2);
+        jButton2.setBounds(390, 310, 150, 30);
 
-        selectroute.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        selectroute.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select Route --" }));
-        jPanel1.add(selectroute);
-        selectroute.setBounds(320, 320, 190, 30);
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Enter Token Number :");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(60, 190, 190, 22);
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setText("Start");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(350, 380, 120, 30);
+        jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(jTextField2);
+        jTextField2.setBounds(260, 190, 250, 28);
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
-        jPanel1.add(jLabel6);
-        jLabel6.setBounds(0, 0, 800, 500);
+        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jButton3.setText("Chcek Balance");
+        jPanel1.add(jButton3);
+        jButton3.setBounds(530, 190, 160, 30);
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Start Station" }));
+        jPanel1.add(jComboBox1);
+        jComboBox1.setBounds(260, 250, 190, 28);
+
+        jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select End Station" }));
+        jPanel1.add(jComboBox2);
+        jComboBox2.setBounds(470, 250, 190, 28);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(281, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(161, Short.MAX_VALUE))
         );
 
         pack();
@@ -135,34 +152,37 @@ public class conductorShiftSelect extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(conductorShiftSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(conductorCheckToken.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(conductorShiftSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(conductorCheckToken.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(conductorShiftSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(conductorCheckToken.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(conductorShiftSelect.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(conductorCheckToken.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new conductorShiftSelect().setVisible(true);
+                new conductorCheckToken().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JComboBox<String> selectnetwork;
-    private javax.swing.JComboBox<String> selectroute;
     // End of variables declaration//GEN-END:variables
 }
