@@ -8,6 +8,7 @@ package models;
 import controllers.Account;
 import controllers.JourneyList;
 import controllers.NetworkStopList;
+import java.io.Serializable;
 import static java.lang.System.in;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,7 +17,7 @@ import java.util.Date;
  *
  * @author Nadya Sirimanna
  */
-public class token {
+public class token implements Serializable {
     private String tokenID;
     private JourneyList journeys;
     private NetworkStopList networks;
