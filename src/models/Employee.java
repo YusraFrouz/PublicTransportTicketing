@@ -22,17 +22,18 @@ public class Employee implements Serializable{
     private String Username;
     private String Password;
     private String EmployeeType;
+    private static int EmployeeCount = 0;
     
     
     private static int id = 0;       
         
-    public void Empoyee(String empType, String name, String add, String username, String pwd){
+    public Employee(String empType, String name, String address, String username, String pwd){
             EmployeeType = empType;
             EmployeeName = name;
-            EmployeeAddress = add;
+            EmployeeAddress = address;
             Username = username;
-            Password = pwd;   
-            EmployeeID = id++;
+            Password = pwd; 
+            EmployeeID=++EmployeeCount;
          }
         
         public int getID(){
@@ -42,6 +43,15 @@ public class Employee implements Serializable{
         public String getName(){
             return EmployeeName;
         }
+
+        public static int getEmployeeCount() {
+            return EmployeeCount;
+        }
+
+        public static void setEmployeeCount(int EmployeeCount) {
+            Employee.EmployeeCount = EmployeeCount;
+        }
+        
 
         public void setName(String EmployeeName){
             this.EmployeeName = EmployeeName;
@@ -69,19 +79,6 @@ public class Employee implements Serializable{
         
         public void setPassword(String Password){
             this.Password = Password;
-        }
-        
-        
-        
-        public void serializeEmployee(List <Employee> emp, String employeeFile){
-            
-            try(ObjectOutputStream out = 
-                    new ObjectOutputStream(new FileOutputStream(employeeFile))){
-                out.writeObject(emp);
-            } catch (IOException ex) {
-                System.out.println("Error");
-                System.err.println(ex.getMessage());
-            }
         }
     }
 

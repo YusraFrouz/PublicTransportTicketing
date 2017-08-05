@@ -5,10 +5,20 @@
  */
 package views;
 
+import static controllers.TransactionList.file;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import static java.lang.System.in;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
 import models.Employee;
+
 
 /**
  *
@@ -16,7 +26,50 @@ import models.Employee;
  */
 public class createEmployee extends javax.swing.JFrame {
 
-    List <Employee> employees = new ArrayList<Employee>();
+    ArrayList <Employee> employees = new ArrayList<Employee>();
+    public static final File file = new File("Employee.txt");
+    
+    public void Serialize( ArrayList arraylist){
+        try{
+            FileOutputStream fos = new FileOutputStream(file);
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            
+            oos.writeObject(arraylist);
+            fos.close();
+            System.out.println("Serialized");
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+  public ArrayList Deserialize(File filename){
+        
+        ArrayList d_arraylist = null;
+        try{
+            FileInputStream fis = new FileInputStream(filename);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            d_arraylist = (ArrayList)ois.readObject();
+            fis.close();
+            System.out.println("Deserialized");
+            System.out.println(d_arraylist);
+            
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        } 
+        
+        return d_arraylist;
+    }
     
     /**
      * Creates new form employee
@@ -101,19 +154,19 @@ public class createEmployee extends javax.swing.JFrame {
             }
         });
         jPanel1.add(txtname);
-        txtname.setBounds(400, 220, 170, 23);
+        txtname.setBounds(400, 210, 170, 30);
 
         txtaddress.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtaddress);
-        txtaddress.setBounds(400, 260, 170, 23);
+        txtaddress.setBounds(400, 250, 170, 30);
 
         txtusername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtusername);
-        txtusername.setBounds(400, 300, 170, 23);
+        txtusername.setBounds(400, 293, 170, 30);
 
         txtpwd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jPanel1.add(txtpwd);
-        txtpwd.setBounds(400, 340, 170, 23);
+        txtpwd.setBounds(400, 333, 170, 30);
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
         jPanel1.add(jLabel7);
@@ -178,15 +231,40 @@ public class createEmployee extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        
         String empType = jComboBox1.getSelectedItem().toString();
         String name = txtname.getText();
         String address = txtaddress.getText();
         String username = txtusername.getText();
-        String password = txtpwd.getText();
+        String pwd = txtpwd.getText();
 
-        if (name == null || address == null || username == null || password == null ) {
-            JOptionPane.showMessageDialog(null, "Please Fill All Fileds!");
+        if (name.isEmpty() || address.isEmpty() || username.isEmpty() || pwd.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Please Fill All The Fileds!");
+                   
+        }else{
+            Employee emp = new Employee(empType, name, address, username, pwd);
+            
+            ArrayList <Employee> employeesArr = new ArrayList<Employee>();
+            employeesArr = Deserialize(file);
+            emp.setEmployeeCount(employeesArr.size());
+            employeesArr.add(emp);
+            
+            Serialize(employeesArr);
+            
+            System.out.println("Checking again");
+            employeesArr = Deserialize(file);
+            //emp.setEmployeeCount(employeesArr.size());
+            //employeesArr.add(emp);
+            
+            //Serialize(employeesArr);
+            for (Employee i : employeesArr){
+                System.out.println(i.getID());
+            }
+            
+            
         }
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

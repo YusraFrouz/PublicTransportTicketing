@@ -6,7 +6,7 @@
 package controllers;
 
 import models.token;
-import models.TransactionLIst;
+import controllers.TransactionList;
 
 /**
  *
@@ -14,8 +14,8 @@ import models.TransactionLIst;
  */
 public class Account {
     private token tokens[]; 
-    private TransactionLIst transactions[];
-    private float Balance;
+    private TransactionList transactions[];
+    private float amount;
     private float balance; //added by nadya
 
     public float getBalance() {
@@ -42,7 +42,7 @@ public class Account {
     }
     
     public token[] updateBalance(){
-        return ammount;
+        return amount;
     }
     
     public float recordPayment(String option, float amount){
