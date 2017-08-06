@@ -11,5 +11,9 @@ package controllers;
  * @author Prarthana
  */
 public class DisplayMessage {
+
+    static void display(String network_already_exists) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

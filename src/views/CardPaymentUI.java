@@ -19,13 +19,23 @@ public class CardPaymentUI extends javax.swing.JFrame {
      */
     
     public static float amount = 0;
-    
-    public CardPaymentUI() {
+    private static String user_tokenID;
+    public CardPaymentUI(String tokenID) {
         initComponents();
+        this.user_tokenID = tokenID;
         EnterAmount.setVisible(true);
         InsertCard.setVisible(false);
         EnterPIN.setVisible(false);
     }
+
+    public static String getUser_tokenID() {
+        return user_tokenID;
+    }
+
+    public static void setUser_tokenID(String user_tokenID) {
+        CardPaymentUI.user_tokenID = user_tokenID;
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -767,7 +777,7 @@ public class CardPaymentUI extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CardPaymentUI().setVisible(true);
+                new CardPaymentUI(user_tokenID).setVisible(true);
             }
         });
     }

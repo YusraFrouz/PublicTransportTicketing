@@ -5,9 +5,11 @@
  */
 package views;
 
+import controllers.AccountList;
 import controllers.tokenList;
 import controllers.tokenReader;
 import java.util.ArrayList;
+import models.Account;
 import models.token;
 
 /**
@@ -19,13 +21,25 @@ public class PayStationUI extends javax.swing.JFrame {
     /**
      * Creates new form ScanTicket
      */
+    private static String user_tokenID;
     public PayStationUI() {
         initComponents();
-        readToken.setVisible(true);
+        main.setVisible(true);
+        NewAccount.setVisible(false);
+        readToken.setVisible(false);
         readBalance.setVisible(false);
         
     }
 
+    public String getUser_tokenID() {
+        return user_tokenID;
+    }
+
+    public void setUser_tokenID(String user_tokenID) {
+        this.user_tokenID = user_tokenID;
+    }
+
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,10 +61,27 @@ public class PayStationUI extends javax.swing.JFrame {
         ps_btnPayWithCash = new javax.swing.JButton();
         ps_btnPayWithCard = new javax.swing.JButton();
         ps_btnExitAccount = new javax.swing.JButton();
+        main = new javax.swing.JPanel();
+        ps_btnMainNewUser = new javax.swing.JButton();
+        ps_mainAddPayment = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        NewAccount = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        ps_na_UserID = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        ps_na_username = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        ps_na_TokenID = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        ps_na_amount = new javax.swing.JTextField();
+        ps_na_btnproceed = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Transit Authority");
+
+        readToken.setPreferredSize(new java.awt.Dimension(527, 406));
 
         jLabel2.setText("Scan Your Token Here");
 
@@ -87,7 +118,7 @@ public class PayStationUI extends javax.swing.JFrame {
                 .addComponent(ps_tokenID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
                 .addComponent(ps_btnScanToken)
-                .addContainerGap(131, Short.MAX_VALUE))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         readBalance.setPreferredSize(new java.awt.Dimension(527, 358));
@@ -152,26 +183,170 @@ public class PayStationUI extends javax.swing.JFrame {
                 .addGap(117, 117, 117))
         );
 
+        main.setMinimumSize(new java.awt.Dimension(527, 406));
+
+        ps_btnMainNewUser.setText("Register as a New User");
+        ps_btnMainNewUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ps_btnMainNewUserActionPerformed(evt);
+            }
+        });
+
+        ps_mainAddPayment.setText("Top Up Account");
+        ps_mainAddPayment.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ps_mainAddPaymentActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Transit Authority");
+
+        javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
+        main.setLayout(mainLayout);
+        mainLayout.setHorizontalGroup(
+            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(mainLayout.createSequentialGroup()
+                .addGap(75, 75, 75)
+                .addComponent(ps_btnMainNewUser)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
+                .addComponent(ps_mainAddPayment)
+                .addGap(130, 130, 130))
+            .addGroup(mainLayout.createSequentialGroup()
+                .addGap(202, 202, 202)
+                .addComponent(jLabel4)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        mainLayout.setVerticalGroup(
+            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainLayout.createSequentialGroup()
+                .addGap(71, 71, 71)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
+                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ps_btnMainNewUser)
+                    .addComponent(ps_mainAddPayment))
+                .addGap(85, 85, 85))
+        );
+
+        NewAccount.setMinimumSize(new java.awt.Dimension(527, 406));
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("User Details"));
+
+        jLabel5.setText("User ID");
+
+        ps_na_UserID.setText("User ID");
+
+        jLabel7.setText("User Name");
+
+        ps_na_username.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ps_na_usernameActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Token ID");
+
+        ps_na_TokenID.setText("Token ID");
+
+        jLabel10.setText("amount");
+
+        ps_na_btnproceed.setText("Proceed");
+        ps_na_btnproceed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ps_na_btnproceedActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel10))
+                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(ps_na_TokenID)
+                    .addComponent(ps_na_UserID)
+                    .addComponent(ps_na_username, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                    .addComponent(ps_na_amount))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(285, Short.MAX_VALUE)
+                .addComponent(ps_na_btnproceed)
+                .addGap(159, 159, 159))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(ps_na_UserID))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(ps_na_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(ps_na_TokenID))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(ps_na_amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(86, 86, 86)
+                .addComponent(ps_na_btnproceed)
+                .addContainerGap(111, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout NewAccountLayout = new javax.swing.GroupLayout(NewAccount);
+        NewAccount.setLayout(NewAccountLayout);
+        NewAccountLayout.setHorizontalGroup(
+            NewAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        NewAccountLayout.setVerticalGroup(
+            NewAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(readToken, javax.swing.JLayeredPane.DEFAULT_LAYER);
         jLayeredPane1.setLayer(readBalance, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(main, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(NewAccount, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(readToken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(readToken, javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(221, 221, 221))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(readBalance, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(readBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(213, 213, 213)
+                    .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(214, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(213, 213, 213)
+                    .addComponent(NewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(214, Short.MAX_VALUE)))
         );
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addGap(0, 28, Short.MAX_VALUE)
+                .addGap(0, 334, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(readToken, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -179,6 +354,16 @@ public class PayStationUI extends javax.swing.JFrame {
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                     .addGap(0, 52, Short.MAX_VALUE)
                     .addComponent(readBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(153, 153, 153)
+                    .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(153, Short.MAX_VALUE)))
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addGap(153, 153, 153)
+                    .addComponent(NewAccount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(153, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -205,22 +390,21 @@ public class PayStationUI extends javax.swing.JFrame {
         
         String tokenID = ps_tokenID.getText();
         tokenList tokens = new tokenList();
+        //tokenList tokenlist = new tokenList();
         tokenReader tknRead = new tokenReader();
         ArrayList<token> token = new ArrayList<token>();
-        
-        
         token token1 = new token();
         String infomsg;
         String Titlebar;
+        
         if ( tokens.findTokenByID(tokenID) ){
+            user_tokenID = tokenID;
             infomsg = "Valid token ID";
             Titlebar = "Success";
             tknRead.displayConfirmationMessage(infomsg, Titlebar);
-            token = tokens.getTokenByID(tokenID);
-            for(token i:token){
-                String accBalance = Double.toString(i.getBalannce());
-                ps_currentBalance.setText(accBalance);
-            }
+            String accBalance = Double.toString(tokens.getBalannce(tokenID));
+            ps_currentBalance.setText(accBalance);
+            
             readToken.setVisible(false);
             readBalance.setVisible(true);
         }
@@ -233,17 +417,59 @@ public class PayStationUI extends javax.swing.JFrame {
 
     private void ps_btnPayWithCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnPayWithCashActionPerformed
         // TODO add your handling code here:
-        CashPaymentUI cashpayment = new CashPaymentUI();
+        CashPaymentUI cashpayment = new CashPaymentUI(user_tokenID);
+        cashpayment.setUser_tokenID(user_tokenID);
         cashpayment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ps_btnPayWithCashActionPerformed
 
     private void ps_btnPayWithCardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnPayWithCardActionPerformed
         // TODO add your handling code here:
-        CardPaymentUI cardpayment = new CardPaymentUI();
+        CardPaymentUI cardpayment = new CardPaymentUI(user_tokenID);
+        cardpayment.setUser_tokenID(user_tokenID);
         cardpayment.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_ps_btnPayWithCardActionPerformed
+
+    private void ps_btnMainNewUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnMainNewUserActionPerformed
+        // TODO add your handling code here:
+        
+        main.setVisible(false);
+        NewAccount.setVisible(true);
+        readToken.setVisible(false);
+        readBalance.setVisible(false);
+        
+    }//GEN-LAST:event_ps_btnMainNewUserActionPerformed
+
+    private void ps_mainAddPaymentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_mainAddPaymentActionPerformed
+        // TODO add your handling code here:
+        main.setVisible(false);
+        NewAccount.setVisible(false);
+        readToken.setVisible(true);
+        readBalance.setVisible(false);
+    }//GEN-LAST:event_ps_mainAddPaymentActionPerformed
+
+    private void ps_na_usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_na_usernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ps_na_usernameActionPerformed
+
+    private void ps_na_btnproceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_na_btnproceedActionPerformed
+        // TODO add your handling code here:
+        token token1 = new token();
+        int usercount = Account.getAccountCount() + 1;
+        ps_na_UserID.setText(Integer.toString(usercount));
+        String userName = ps_na_username.getText();
+        int tokencount = token1.getCount();
+        ps_na_TokenID.setText(Integer.toString(tokencount));
+        Double amount = Double.parseDouble(ps_na_amount.getText());
+        
+        Account account = new Account(token1,userName,amount);
+        
+        AccountList accountlist = new AccountList();
+        tokenList tokenlist = new tokenList();
+        tokenlist.add(token1);
+        accountlist.addAccount(account);
+    }//GEN-LAST:event_ps_na_btnproceedActionPerformed
 
     /**
      * @param args the command line arguments
@@ -288,15 +514,30 @@ public class PayStationUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel NewAccount;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLayeredPane jLayeredPane1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel main;
     private javax.swing.JButton ps_btnExitAccount;
+    private javax.swing.JButton ps_btnMainNewUser;
     private javax.swing.JButton ps_btnPayWithCard;
     private javax.swing.JButton ps_btnPayWithCash;
     private javax.swing.JButton ps_btnScanToken;
     private javax.swing.JTextField ps_currentBalance;
+    private javax.swing.JButton ps_mainAddPayment;
+    private javax.swing.JLabel ps_na_TokenID;
+    private javax.swing.JLabel ps_na_UserID;
+    private javax.swing.JTextField ps_na_amount;
+    private javax.swing.JButton ps_na_btnproceed;
+    private javax.swing.JTextField ps_na_username;
     private javax.swing.JTextField ps_tokenID;
     private javax.swing.JPanel readBalance;
     private javax.swing.JPanel readToken;

@@ -14,6 +14,10 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Date;
+import models.Account;
+import models.Journey;
+import models.Network;
 import models.token;
 
 /**
@@ -22,16 +26,34 @@ import models.token;
  */
 public class tokenList extends ArrayList<token> {
     private token token;
+    private JourneyList journeys;
+    private NetworkStopList networks;
+    private Account account;
+    
     ArrayList<token> tokenArr = new ArrayList<token>();
     ArrayList<token> token2 = new ArrayList<token>();
+    ArrayList<Account> accountArr = new ArrayList<Account>();
+    
     public static final File file = new File("token.txt");
+    public static final File Accfile = new File("account.txt");
+    
     private JourneyList tokenList ;
     private int count; 
+    
+    ArrayList<Journey> journeyArr = new ArrayList<Journey>();
+    ArrayList<Network> networkArr = new ArrayList<Network>();
+    
     
     public tokenList(){
         tokenArr = Deserialize(file);
         count  = tokenArr.size();
-        token.setCount(count);
+        token.setCount(count + 1);
+    }
+    
+    public void addToken(token token){
+        tokenArr = Deserialize(file);
+        tokenArr.add(token);
+        Serialize(tokenArr);
     }
     
     public boolean findTokenByID (String ID)
@@ -56,6 +78,65 @@ public class tokenList extends ArrayList<token> {
             }
         }
         return token2;
+    }
+    
+    public double getBalannce(String ID){
+        accountArr = Deserialize(Accfile);
+        for (Account i : accountArr){
+            for (token j : i.getTokenList()){
+                if (j.getTokenID().equalsIgnoreCase(ID)){
+                return i.getBalance();
+                }
+            }
+        }
+        return 0;
+    }
+    
+    public boolean hasCredit(String ID){
+        double balance = account.getBalance();
+        
+        accountArr = Deserialize(Accfile);
+        for (Account i : accountArr){
+            for (token j : i.getTokenList()){
+                if (j.getTokenID().equalsIgnoreCase(ID)){
+                    if (balance>0){
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+                    
+    }
+    //Not sure about the implementations
+    public void getJourneys(String ID){
+        journeyArr = journeys.getJourneys();
+    }
+    
+    public void getTodaysJourneys(){
+        Date today = new Date();
+        journeyArr = journeys.findJourneysByDate(today);
+    }
+    
+    public boolean isValid(NetworkStopList stop){
+        networkArr = networks.getNetworkStops();
+        for (Network i : networkArr){
+            if (i.equals(stop)){
+                return true;
+            }
+        }
+        return false;
+    }
+    public void recordJourney(NetworkStopList stop){
+    
+    }
+    
+    public void addJourney(Journey journey){
+        journeys.addJourney(journey);
+    }
+    
+    public void recordPayment(String option, float amount){
+    
     }
     
     

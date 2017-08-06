@@ -5,7 +5,7 @@
  */
 package models;
 
-import controllers.Account;
+import models.Account;
 import controllers.JourneyList;
 import controllers.NetworkStopList;
 import java.io.Serializable;
@@ -24,51 +24,11 @@ public class token implements Serializable {
     private Account account;
     
     int count = 0;
-    ArrayList<Journey> journeyArr = new ArrayList<Journey>();
-    ArrayList<Network> networkArr = new ArrayList<Network>();
     
     public token(){
+        tokenID = Integer.toString(count);
+    }
     
-    }
-    public double getBalannce(){
-        return account.getBalance();
-    }
-    public void getJourneys(){
-        journeyArr = journeys.getJourneys();
-    }
-    public void getTodaysJourneys(){
-        Date today = new Date();
-        journeyArr = journeys.findJourneysByDate(today);
-    }
-    public boolean isValid(NetworkStopList stop){
-        networkArr = networks.getNetworkStops();
-        for (Network i : networkArr){
-            if (i.equals(stop)){
-                return true;
-            }
-        }
-        return false;
-    }
-    public void recordJourney(NetworkStopList stop){
-    
-    }
-    public void addJourney(Journey journey){
-        journeys.addJourney(journey);
-    }
-    public void recordPayment(String option, float amount){
-    
-    }
-    public boolean hasCredit(){
-        double balance = account.getBalance();
-        
-        if (balance>0){
-            return true;
-        }
-        else
-            return false;
-                    
-    }
-
     public int getCount() {
         return count;
     }
@@ -84,8 +44,11 @@ public class token implements Serializable {
     public void setTokenID(String tokenID) {
         this.tokenID = tokenID;
     }
+
     
     
+    
+
     
     
 }
