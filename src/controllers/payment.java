@@ -11,4 +11,15 @@ package controllers;
  */
 public class payment {
     
+    public void displayAmount(){
+        
+    }
+    public boolean confirmAmount(){
+        return true;
+        
+    }
+    public void refundAmount(){
+    
+    }
+    
 }

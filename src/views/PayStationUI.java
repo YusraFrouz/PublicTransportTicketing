@@ -5,6 +5,10 @@
  */
 package views;
 
+import controllers.tokenList;
+import controllers.tokenReader;
+import models.token;
+
 /**
  *
  * @author Nadya Sirimanna
@@ -18,6 +22,7 @@ public class PayStationUI extends javax.swing.JFrame {
         initComponents();
         readToken.setVisible(true);
         readBalance.setVisible(false);
+        
     }
 
     /**
@@ -195,8 +200,28 @@ public class PayStationUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ps_btnExitActionPerformed
 
     private void ps_btnScanTokenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnScanTokenActionPerformed
-        readToken.setVisible(false);
-        readBalance.setVisible(true);
+        
+        String tokenID = ps_tokenID.getText();
+        tokenList tokens = new tokenList();
+        tokenReader tknRead = new tokenReader();
+        token token1 = new token();
+        String infomsg;
+        String Titlebar;
+        if ( tokens.findTokenByID(tokenID) ){
+            infomsg = "Valid token ID";
+            Titlebar = "Success";
+            tknRead.displayConfirmationMessage(infomsg, Titlebar);
+            String accBalance = Double.toString(token1.getBalannce());
+            ps_currentBalance.setText(accBalance);
+            
+            readToken.setVisible(false);
+            readBalance.setVisible(true);
+        }
+        else {
+            infomsg = "Invalid token ID";
+            Titlebar = "Unsuccessful";
+            tknRead.displayConfirmationMessage(infomsg, Titlebar);
+        }
     }//GEN-LAST:event_ps_btnScanTokenActionPerformed
 
     private void ps_btnPayWithCashActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnPayWithCashActionPerformed
