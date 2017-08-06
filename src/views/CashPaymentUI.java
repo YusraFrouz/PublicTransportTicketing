@@ -57,12 +57,32 @@ public class CashPaymentUI extends javax.swing.JFrame {
         jLabel3.setText("Enter Amount");
 
         cashp_1.setText("1");
+        cashp_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_1ActionPerformed(evt);
+            }
+        });
 
         cashp_2.setText("2");
+        cashp_2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_2ActionPerformed(evt);
+            }
+        });
 
         cashp_3.setText("3");
+        cashp_3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_3ActionPerformed(evt);
+            }
+        });
 
         cashp_4.setText("4");
+        cashp_4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_4ActionPerformed(evt);
+            }
+        });
 
         cashp_5.setText("5");
         cashp_5.addActionListener(new java.awt.event.ActionListener() {
@@ -72,24 +92,69 @@ public class CashPaymentUI extends javax.swing.JFrame {
         });
 
         cashp_6.setText("6");
+        cashp_6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_6ActionPerformed(evt);
+            }
+        });
 
         cashp_7.setText("7");
+        cashp_7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_7ActionPerformed(evt);
+            }
+        });
 
         cashp_8.setText("8");
+        cashp_8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_8ActionPerformed(evt);
+            }
+        });
 
         cashp_9.setText("9");
+        cashp_9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_9ActionPerformed(evt);
+            }
+        });
 
         cashp_btndel.setText("del");
+        cashp_btndel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_btndelActionPerformed(evt);
+            }
+        });
 
         cashp_10.setText("0");
+        cashp_10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_10ActionPerformed(evt);
+            }
+        });
 
         cashp_btnProceed.setText("Proceed");
+        cashp_btnProceed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_btnProceedActionPerformed(evt);
+            }
+        });
 
         cashp_btnCancel.setText("Cancel");
+        cashp_btnCancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_btnCancelActionPerformed(evt);
+            }
+        });
 
         cashp_lblSuccessMsg.setText("Successful Message");
 
         cashp_dot.setText(".");
+        cashp_dot.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cashp_dotActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -106,46 +171,43 @@ public class CashPaymentUI extends javax.swing.JFrame {
                     .addComponent(jLabel2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cashp_4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cashp_5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cashp_6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(cashp_7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cashp_8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(cashp_9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cashp_dot, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cashp_4, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cashp_10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cashp_5, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cashp_btndel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(cashp_amount)
+                                .addComponent(cashp_6, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(cashp_1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cashp_7, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cashp_2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(cashp_8, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cashp_3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(cashp_9, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createSequentialGroup()
-                            .addComponent(cashp_btnProceed)
-                            .addGap(110, 110, 110)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(132, 132, 132)
+                            .addComponent(cashp_dot, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cashp_10, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cashp_btndel, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(cashp_amount)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(cashp_1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cashp_2, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(cashp_3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(cashp_btnProceed)
+                        .addGap(18, 18, 18)
                         .addComponent(cashp_btnCancel)))
                 .addGap(167, 167, 167))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(211, Short.MAX_VALUE)
                 .addComponent(cashp_lblSuccessMsg)
                 .addGap(210, 210, 210))
         );
@@ -193,8 +255,76 @@ public class CashPaymentUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void cashp_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_5ActionPerformed
-        // TODO add your handling code here:
+        cashp_amount.setText(cashp_amount.getText() + "5");
     }//GEN-LAST:event_cashp_5ActionPerformed
+
+    private void cashp_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_1ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "1");
+    }//GEN-LAST:event_cashp_1ActionPerformed
+
+    private void cashp_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_2ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "2");
+    }//GEN-LAST:event_cashp_2ActionPerformed
+
+    private void cashp_3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_3ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "3");
+    }//GEN-LAST:event_cashp_3ActionPerformed
+
+    private void cashp_4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_4ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "4");
+    }//GEN-LAST:event_cashp_4ActionPerformed
+
+    private void cashp_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_6ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "6");
+    }//GEN-LAST:event_cashp_6ActionPerformed
+
+    private void cashp_7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_7ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "7");
+    }//GEN-LAST:event_cashp_7ActionPerformed
+
+    private void cashp_8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_8ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "8");
+    }//GEN-LAST:event_cashp_8ActionPerformed
+
+    private void cashp_9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_9ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "9");
+    }//GEN-LAST:event_cashp_9ActionPerformed
+
+    private void cashp_dotActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_dotActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + ".");
+    }//GEN-LAST:event_cashp_dotActionPerformed
+
+    private void cashp_10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_10ActionPerformed
+        cashp_amount.setText(cashp_amount.getText() + "0");
+    }//GEN-LAST:event_cashp_10ActionPerformed
+
+    private void cashp_btndelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_btndelActionPerformed
+        
+        int length = cashp_amount.getText().length();
+        int amount = cashp_amount.getText().length() - 1;
+        String store;
+        if(length > 0){
+            StringBuilder back = new StringBuilder(cashp_amount.getText());
+            back.deleteCharAt(amount);
+            store = back.toString();
+            cashp_amount.setText(store);
+            
+        }
+    }//GEN-LAST:event_cashp_btndelActionPerformed
+
+    private void cashp_btnProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_btnProceedActionPerformed
+        
+        
+        
+    }//GEN-LAST:event_cashp_btnProceedActionPerformed
+
+    private void cashp_btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_btnCancelActionPerformed
+        
+        PayStationUI psui = new PayStationUI();
+        psui.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_cashp_btnCancelActionPerformed
 
     /**
      * @param args the command line arguments

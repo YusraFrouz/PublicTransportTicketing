@@ -144,8 +144,8 @@
                       <EmptySpace pref="60" max="32767" attributes="0"/>
                       <Component id="ps_btnPayWithCard" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                      <Component id="ps_btnExit" min="-2" pref="88" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="ps_btnExitAccount" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -165,7 +165,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace pref="79" max="32767" attributes="0"/>
+                      <EmptySpace pref="83" max="32767" attributes="0"/>
                       <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="49" max="-2" attributes="0"/>
                       <Component id="ps_currentBalance" min="-2" max="-2" attributes="0"/>
@@ -173,7 +173,7 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="ps_btnPayWithCard" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="ps_btnPayWithCash" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="ps_btnExit" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ps_btnExitAccount" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                   </Group>
@@ -204,12 +204,12 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ps_btnPayWithCardActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="ps_btnExit">
+            <Component class="javax.swing.JButton" name="ps_btnExitAccount">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Exit"/>
+                <Property name="text" type="java.lang.String" value="Exit Account"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ps_btnExitActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ps_btnExitAccountActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

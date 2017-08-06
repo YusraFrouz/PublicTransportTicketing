@@ -7,6 +7,7 @@ package views;
 
 import controllers.tokenList;
 import controllers.tokenReader;
+import java.util.ArrayList;
 import models.token;
 
 /**
@@ -45,7 +46,7 @@ public class PayStationUI extends javax.swing.JFrame {
         ps_currentBalance = new javax.swing.JTextField();
         ps_btnPayWithCash = new javax.swing.JButton();
         ps_btnPayWithCard = new javax.swing.JButton();
-        ps_btnExit = new javax.swing.JButton();
+        ps_btnExitAccount = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -107,10 +108,10 @@ public class PayStationUI extends javax.swing.JFrame {
             }
         });
 
-        ps_btnExit.setText("Exit");
-        ps_btnExit.addActionListener(new java.awt.event.ActionListener() {
+        ps_btnExitAccount.setText("Exit Account");
+        ps_btnExitAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ps_btnExitActionPerformed(evt);
+                ps_btnExitAccountActionPerformed(evt);
             }
         });
 
@@ -124,8 +125,8 @@ public class PayStationUI extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
                 .addComponent(ps_btnPayWithCard)
                 .addGap(74, 74, 74)
-                .addComponent(ps_btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44))
+                .addComponent(ps_btnExitAccount)
+                .addGap(39, 39, 39))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, readBalanceLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +140,7 @@ public class PayStationUI extends javax.swing.JFrame {
         readBalanceLayout.setVerticalGroup(
             readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(readBalanceLayout.createSequentialGroup()
-                .addContainerGap(79, Short.MAX_VALUE)
+                .addContainerGap(83, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(49, 49, 49)
                 .addComponent(ps_currentBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -147,7 +148,7 @@ public class PayStationUI extends javax.swing.JFrame {
                 .addGroup(readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ps_btnPayWithCard)
                     .addComponent(ps_btnPayWithCash)
-                    .addComponent(ps_btnExit))
+                    .addComponent(ps_btnExitAccount))
                 .addGap(117, 117, 117))
         );
 
@@ -194,16 +195,20 @@ public class PayStationUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ps_btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnExitActionPerformed
-        readToken.setVisible(true);
-        readBalance.setVisible(false);
-    }//GEN-LAST:event_ps_btnExitActionPerformed
+    private void ps_btnExitAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnExitAccountActionPerformed
+        login loginUI = new login();
+        loginUI.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ps_btnExitAccountActionPerformed
 
     private void ps_btnScanTokenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnScanTokenActionPerformed
         
         String tokenID = ps_tokenID.getText();
         tokenList tokens = new tokenList();
         tokenReader tknRead = new tokenReader();
+        ArrayList<token> token = new ArrayList<token>();
+        
+        
         token token1 = new token();
         String infomsg;
         String Titlebar;
@@ -211,9 +216,11 @@ public class PayStationUI extends javax.swing.JFrame {
             infomsg = "Valid token ID";
             Titlebar = "Success";
             tknRead.displayConfirmationMessage(infomsg, Titlebar);
-            String accBalance = Double.toString(token1.getBalannce());
-            ps_currentBalance.setText(accBalance);
-            
+            token = tokens.getTokenByID(tokenID);
+            for(token i:token){
+                String accBalance = Double.toString(i.getBalannce());
+                ps_currentBalance.setText(accBalance);
+            }
             readToken.setVisible(false);
             readBalance.setVisible(true);
         }
@@ -285,7 +292,7 @@ public class PayStationUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLayeredPane jLayeredPane1;
-    private javax.swing.JButton ps_btnExit;
+    private javax.swing.JButton ps_btnExitAccount;
     private javax.swing.JButton ps_btnPayWithCard;
     private javax.swing.JButton ps_btnPayWithCash;
     private javax.swing.JButton ps_btnScanToken;
