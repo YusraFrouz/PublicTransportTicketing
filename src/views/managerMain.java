@@ -27,6 +27,8 @@ public class managerMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator2 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -58,7 +60,15 @@ public class managerMain extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator1 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        jSeparator8 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
+
+        jSeparator7.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -238,8 +248,28 @@ public class managerMain extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Fares", jPanel3);
 
+        jPanel8.setLayout(null);
+
+        jLabel11.setText("Add Route");
+        jPanel8.add(jLabel11);
+        jLabel11.setBounds(30, 30, 51, 14);
+        jPanel8.add(jSeparator3);
+        jSeparator3.setBounds(10, 20, 770, 10);
+
+        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel8.add(jSeparator1);
+        jSeparator1.setBounds(10, 20, 750, 80);
+        jPanel8.add(jSeparator4);
+        jSeparator4.setBounds(10, 100, 770, 90);
+
+        jSeparator8.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        jPanel8.add(jSeparator8);
+        jSeparator8.setBounds(778, 20, 10, 80);
+
+        jTabbedPane1.addTab("Add Netwok", jPanel8);
+
         jPanel1.add(jTabbedPane1);
-        jTabbedPane1.setBounds(0, 120, 800, 380);
+        jTabbedPane1.setBounds(0, 140, 800, 360);
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
         jPanel1.add(jLabel6);
@@ -310,6 +340,7 @@ public class managerMain extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -325,6 +356,13 @@ public class managerMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
