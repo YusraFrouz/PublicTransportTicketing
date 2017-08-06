@@ -29,21 +29,23 @@ public class Account {
     }
     
     
-    public token[] getToken(tokens) {
-        return tokens;
-    }
+//    public token[] getToken(tokens) {
+//        return tokens;
+//    }
     
     public token[] addtken(){
         return tokens;
     }
+    //nadya commented them
     
-    public token[] getBalace(){
-        return balance;
-    }
     
-    public token[] updateBalance(){
-        return amount;
-    }
+//    public token[] getBalace(){
+//        return balance;
+//    }
+//    
+//    public token[] updateBalance(){
+//        return amount;
+//    }
     
     public float recordPayment(String option, float amount){
            return amount;

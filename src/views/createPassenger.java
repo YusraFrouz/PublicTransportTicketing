@@ -5,6 +5,10 @@
  */
 package views;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import models.Employee;
+
 /**
  *
  * @author Yusra Frouz
@@ -149,17 +153,15 @@ public class createPassenger extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
 
-        String empType = jComboBox1.getSelectedItem().toString();
         String name = txtname.getText();
-        String address = txtaddress.getText();
         String username = txtusername.getText();
         String pwd = txtpwd.getText();
 
-        if (name.isEmpty() || address.isEmpty() || username.isEmpty() || pwd.isEmpty()) {
+        if (name.isEmpty() || username.isEmpty() || pwd.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill All The Fileds!");
 
         }else{
-            Employee emp = new Employee(empType, name, address, username, pwd);
+            Employee emp = new Employee(name, username, pwd);
 
             ArrayList <Employee> employeesArr = new ArrayList<Employee>();
             employeesArr = Deserialize(file);

@@ -7,22 +7,8 @@ package controllers;
 
 /**
  *
- * @author Nadya Sirimanna
+ * @author Prarthana
  */
-public class payment {
-    
-    public void displayAmount(){
-        
-    }
-    public boolean confirmAmount(){
-        return true;
-        
-    }
-    public void refundAmount(){
-    
-    }
+public class test {
     
 }
-
-
-
