@@ -22,7 +22,6 @@ public class PayStationUI extends javax.swing.JFrame {
      * Creates new form ScanTicket
      */
     private static String user_tokenID;
-    //private static String use;
     public PayStationUI() {
         initComponents();
         main.setVisible(true);
@@ -408,8 +407,6 @@ public class PayStationUI extends javax.swing.JFrame {
             
             readToken.setVisible(false);
             readBalance.setVisible(true);
-            main.setVisible(false);
-            NewAccount.setVisible(false);
         }
         else {
             infomsg = "Invalid token ID";
