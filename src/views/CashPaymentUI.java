@@ -6,14 +6,17 @@
 package views;
 
 import controllers.AccountList;
+import controllers.payment;
+import controllers.tokenList;
 import java.util.ArrayList;
 import models.Account;
+import models.token;
 
 /**
  *
  * @author Nadya Sirimanna
  */
-public class CashPaymentUI extends javax.swing.JFrame {
+public class CashPaymentUI extends javax.swing.JFrame  {
 
     /**
      * Creates new form CashPaymentUI
@@ -21,9 +24,12 @@ public class CashPaymentUI extends javax.swing.JFrame {
     private static String user_tokenID;
     public CashPaymentUI(String tokenID) {
         this.user_tokenID = tokenID;
+        //payment paymentc = new payment() {};
+        //cashp_lblcurrentBalance.setText(tokenID);
         initComponents();
     }
 
+    
     public static String getUser_tokenID() {
         return user_tokenID;
     }
@@ -61,6 +67,8 @@ public class CashPaymentUI extends javax.swing.JFrame {
         cashp_btnCancel = new javax.swing.JButton();
         cashp_lblSuccessMsg = new javax.swing.JLabel();
         cashp_dot = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        cashp_lblcurrentBalance = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -170,16 +178,14 @@ public class CashPaymentUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setText("Your Current Balance is :");
+
+        cashp_lblcurrentBalance.setText("Here");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(228, 228, 228)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(190, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -223,18 +229,35 @@ public class CashPaymentUI extends javax.swing.JFrame {
                         .addGap(210, 210, 210))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(209, 209, 209))))
+                        .addGap(207, 207, 207))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(228, 228, 228)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel4)
+                        .addGap(29, 29, 29)
+                        .addComponent(cashp_lblcurrentBalance)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(78, 78, 78)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(cashp_lblcurrentBalance))
+                .addGap(20, 20, 20)
                 .addComponent(jLabel3)
-                .addGap(18, 18, 18)
+                .addGap(26, 26, 26)
                 .addComponent(cashp_amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(cashp_lblSuccessMsg)
@@ -327,11 +350,18 @@ public class CashPaymentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cashp_btndelActionPerformed
 
     private void cashp_btnProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cashp_btnProceedActionPerformed
-        Double amount = Double.parseDouble(cashp_amount.getText());
+        double amount = Double.parseDouble(cashp_amount.getText());
         //get these into a method in the payment method
         AccountList actlist = new AccountList();
+        tokenList token = new tokenList();
         ArrayList<Account> accArr = new ArrayList<Account>();
+        ArrayList<token> foundToken = new ArrayList<token>();
         accArr = actlist.getAllAccounts();
+        //Account account = new Account();
+        foundToken = token.getTokenByID(user_tokenID);
+        if(amount>0){
+           actlist.updateBalance(amount, user_tokenID);
+        }
         
         
     }//GEN-LAST:event_cashp_btnProceedActionPerformed
@@ -397,8 +427,10 @@ public class CashPaymentUI extends javax.swing.JFrame {
     private javax.swing.JButton cashp_btndel;
     private javax.swing.JButton cashp_dot;
     private javax.swing.JLabel cashp_lblSuccessMsg;
+    private javax.swing.JLabel cashp_lblcurrentBalance;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables
 }

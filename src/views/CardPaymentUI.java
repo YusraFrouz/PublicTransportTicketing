@@ -5,8 +5,13 @@
  */
 package views;
 
+import controllers.AccountList;
+import controllers.tokenList;
+import java.util.ArrayList;
 import javafx.scene.control.Alert;
 import javax.swing.JOptionPane;
+import models.Account;
+import models.token;
 
 /**
  *
@@ -23,6 +28,8 @@ public class CardPaymentUI extends javax.swing.JFrame {
     public CardPaymentUI(String tokenID) {
         initComponents();
         this.user_tokenID = tokenID;
+        //cardp_lblcurrentBalance.setText(tokenID);
+        
         EnterAmount.setVisible(true);
         InsertCard.setVisible(false);
         EnterPIN.setVisible(false);
@@ -66,6 +73,8 @@ public class CardPaymentUI extends javax.swing.JFrame {
         cardp_btnEnterAmountBack = new javax.swing.JButton();
         cardp_btnProceed = new javax.swing.JButton();
         cardp_1 = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        cardp_lblcurrentBalance = new javax.swing.JLabel();
         InsertCard = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -197,6 +206,10 @@ public class CardPaymentUI extends javax.swing.JFrame {
             }
         });
 
+        jLabel10.setText("Your Current Balance is :");
+
+        cardp_lblcurrentBalance.setText("Here");
+
         javax.swing.GroupLayout EnterAmountLayout = new javax.swing.GroupLayout(EnterAmount);
         EnterAmount.setLayout(EnterAmountLayout);
         EnterAmountLayout.setHorizontalGroup(
@@ -232,6 +245,12 @@ public class CardPaymentUI extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cardp_3, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(205, 205, 205))
+            .addGroup(EnterAmountLayout.createSequentialGroup()
+                .addGap(181, 181, 181)
+                .addComponent(jLabel10)
+                .addGap(29, 29, 29)
+                .addComponent(cardp_lblcurrentBalance)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(EnterAmountLayout.createSequentialGroup()
                     .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,7 +274,11 @@ public class CardPaymentUI extends javax.swing.JFrame {
         EnterAmountLayout.setVerticalGroup(
             EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EnterAmountLayout.createSequentialGroup()
-                .addContainerGap(192, Short.MAX_VALUE)
+                .addContainerGap(127, Short.MAX_VALUE)
+                .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(cardp_lblcurrentBalance))
+                .addGap(51, 51, 51)
                 .addComponent(cardp_amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(EnterAmountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -631,7 +654,26 @@ public class CardPaymentUI extends javax.swing.JFrame {
     }//GEN-LAST:event_cashp_btnInsertCardCancelActionPerformed
 
     private void cardp_btnEnterPINProceedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cardp_btnEnterPINProceedActionPerformed
-        
+        if("".equals(cardp_pin.getText())){
+            JOptionPane.showMessageDialog(null,"Please enter your PIN to proceed.","Warning",JOptionPane.WARNING_MESSAGE);
+   
+        } 
+            else{
+            AccountList actlist = new AccountList();
+            tokenList token = new tokenList();
+            ArrayList<Account> accArr = new ArrayList<Account>();
+            ArrayList<token> foundToken = new ArrayList<token>();
+            accArr = actlist.getAllAccounts();
+            //Account account = new Account();
+            foundToken = token.getTokenByID(user_tokenID);
+            if(amount>0){
+                actlist.updateBalance(amount, user_tokenID);
+                JOptionPane.showMessageDialog(null,"You have successfully updated your account balance","Success",JOptionPane.INFORMATION_MESSAGE);
+            }
+            InsertCard.setVisible(true);
+            EnterAmount.setVisible(false);
+            EnterPIN.setVisible(false);
+            }        
         
         
     }//GEN-LAST:event_cardp_btnEnterPINProceedActionPerformed
@@ -804,6 +846,7 @@ public class CardPaymentUI extends javax.swing.JFrame {
     private javax.swing.JButton cardp_btnProceed;
     private javax.swing.JButton cardp_del;
     private javax.swing.JButton cardp_dot;
+    private javax.swing.JLabel cardp_lblcurrentBalance;
     private javax.swing.JButton cardp_p0;
     private javax.swing.JButton cardp_p1;
     private javax.swing.JButton cardp_p2;
@@ -818,6 +861,7 @@ public class CardPaymentUI extends javax.swing.JFrame {
     private javax.swing.JTextField cardp_pin;
     private javax.swing.JButton cashp_btnInsertCardCancel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

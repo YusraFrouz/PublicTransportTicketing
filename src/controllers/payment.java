@@ -9,19 +9,20 @@ package controllers;
  *
  * @author Nadya Sirimanna
  */
-public class payment {
+public abstract class payment {
     
-    public void displayAmount(){
-        
+    public double amount;
+    
+    public double displayAmount(double Amount){
+        return Amount;
     }
     public boolean confirmAmount(){
-        return true;
         
+        return true;
     }
     public void refundAmount(){
     
     }
-    
 }
 
 
