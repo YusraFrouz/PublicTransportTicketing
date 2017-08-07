@@ -19,7 +19,7 @@ public class Employee implements Serializable{
     private int EmployeeID;
     private String EmployeeName;
     private String EmployeeAddress;
-    private String Username;
+    private static String Username;
     private String Password;
     private String EmployeeType;
     private static int EmployeeCount = 0;
@@ -33,7 +33,7 @@ public class Employee implements Serializable{
             EmployeeAddress = address;
             Username = username;
             Password = pwd; 
-            EmployeeID=++EmployeeCount;
+            EmployeeID=EmployeeCount++;
          }
         
         public int getID(){
@@ -50,8 +50,7 @@ public class Employee implements Serializable{
 
         public static void setEmployeeCount(int EmployeeCount) {
             Employee.EmployeeCount = EmployeeCount;
-        }
-        
+        }       
 
         public void setName(String EmployeeName){
             this.EmployeeName = EmployeeName;
@@ -65,8 +64,8 @@ public class Employee implements Serializable{
             this.EmployeeAddress = EmployeeAddress;
         }
         
-        public String getUsername(){
-            return Username;
+        public static void getUsername(String Username){
+            Employee.Username = Username;
         }
 
         public void setUsername(String Username){

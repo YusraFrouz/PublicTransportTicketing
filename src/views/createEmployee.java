@@ -17,6 +17,7 @@ import static java.lang.System.in;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
 import models.Employee;
 
 
@@ -25,7 +26,7 @@ import models.Employee;
  * @author Yusra Frouz
  */
 public class createEmployee extends javax.swing.JFrame {
-
+   
     ArrayList <Employee> employees = new ArrayList<Employee>();
     public static final File file = new File("Employee.txt");
     
@@ -97,11 +98,11 @@ public class createEmployee extends javax.swing.JFrame {
         txtname = new javax.swing.JTextField();
         txtaddress = new javax.swing.JTextField();
         txtusername = new javax.swing.JTextField();
-        txtpwd = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
+        txtpwd = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -164,10 +165,6 @@ public class createEmployee extends javax.swing.JFrame {
         jPanel1.add(txtusername);
         txtusername.setBounds(400, 293, 170, 30);
 
-        txtpwd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jPanel1.add(txtpwd);
-        txtpwd.setBounds(400, 333, 170, 30);
-
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
         jPanel1.add(jLabel7);
         jLabel7.setBounds(200, 10, 440, 140);
@@ -192,6 +189,14 @@ public class createEmployee extends javax.swing.JFrame {
         jPanel1.add(jComboBox1);
         jComboBox1.setBounds(400, 170, 170, 30);
 
+        txtpwd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtpwdActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtpwd);
+        txtpwd.setBounds(400, 330, 170, 30);
+
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
         jPanel1.add(jLabel6);
         jLabel6.setBounds(0, 0, 800, 500);
@@ -212,6 +217,7 @@ public class createEmployee extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -250,15 +256,13 @@ public class createEmployee extends javax.swing.JFrame {
             employeesArr.add(emp);
             
             Serialize(employeesArr);
+            JOptionPane.showMessageDialog(null, "Account Succesfully Created! Please Click Ok to Login ");
+            new login().setVisible(true);
+            this.dispose();
             
             System.out.println("Checking again");
-            employeesArr = Deserialize(file);
-            //emp.setEmployeeCount(employeesArr.size());
-            //employeesArr.add(emp);
-            
-            //Serialize(employeesArr);
             for (Employee i : employeesArr){
-                System.out.println(i.getID());
+                System.out.println("id:" + i.getID() + "name:" + i.getName() + "password:" + i.getPassword());
             }
             
             
@@ -266,6 +270,10 @@ public class createEmployee extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void txtpwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpwdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtpwdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -318,7 +326,7 @@ public class createEmployee extends javax.swing.JFrame {
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JTextField txtaddress;
     private javax.swing.JTextField txtname;
-    private javax.swing.JTextField txtpwd;
+    private javax.swing.JPasswordField txtpwd;
     private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }

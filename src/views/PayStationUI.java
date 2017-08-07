@@ -55,16 +55,27 @@ public class PayStationUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         ps_tokenID = new javax.swing.JTextField();
         ps_btnScanToken = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
+        jLabel6 = new javax.swing.JLabel();
         readBalance = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         ps_currentBalance = new javax.swing.JTextField();
         ps_btnPayWithCash = new javax.swing.JButton();
         ps_btnPayWithCard = new javax.swing.JButton();
         ps_btnExitAccount = new javax.swing.JButton();
+        jLabel12 = new javax.swing.JLabel();
+        jToggleButton3 = new javax.swing.JToggleButton();
+        jToggleButton4 = new javax.swing.JToggleButton();
+        jLabel11 = new javax.swing.JLabel();
         main = new javax.swing.JPanel();
         ps_btnMainNewUser = new javax.swing.JButton();
         ps_mainAddPayment = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jToggleButton5 = new javax.swing.JToggleButton();
+        jToggleButton6 = new javax.swing.JToggleButton();
+        jLabel13 = new javax.swing.JLabel();
         NewAccount = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
@@ -76,243 +87,290 @@ public class PayStationUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         ps_na_amount = new javax.swing.JTextField();
         ps_na_btnproceed = new javax.swing.JButton();
+        jLabel16 = new javax.swing.JLabel();
+        jToggleButton7 = new javax.swing.JToggleButton();
+        jToggleButton8 = new javax.swing.JToggleButton();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(800, 500));
+        setMinimumSize(new java.awt.Dimension(800, 500));
+        setPreferredSize(new java.awt.Dimension(800, 500));
+        setResizable(false);
 
         jLabel1.setText("Transit Authority");
 
         readToken.setPreferredSize(new java.awt.Dimension(527, 406));
+        readToken.setLayout(null);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Scan Your Token Here");
+        readToken.add(jLabel2);
+        jLabel2.setBounds(330, 200, 190, 30);
 
+        ps_tokenID.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        readToken.add(ps_tokenID);
+        ps_tokenID.setBounds(290, 260, 270, 40);
+
+        ps_btnScanToken.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_btnScanToken.setText("Proceed");
         ps_btnScanToken.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_btnScanTokenActionPerformed(evt);
             }
         });
+        readToken.add(ps_btnScanToken);
+        ps_btnScanToken.setBounds(360, 330, 140, 40);
 
-        javax.swing.GroupLayout readTokenLayout = new javax.swing.GroupLayout(readToken);
-        readToken.setLayout(readTokenLayout);
-        readTokenLayout.setHorizontalGroup(
-            readTokenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(readTokenLayout.createSequentialGroup()
-                .addGroup(readTokenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(readTokenLayout.createSequentialGroup()
-                        .addGap(206, 206, 206)
-                        .addComponent(jLabel2))
-                    .addGroup(readTokenLayout.createSequentialGroup()
-                        .addGap(172, 172, 172)
-                        .addComponent(ps_tokenID, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(readTokenLayout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(ps_btnScanToken)))
-                .addContainerGap(173, Short.MAX_VALUE))
-        );
-        readTokenLayout.setVerticalGroup(
-            readTokenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(readTokenLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(jLabel2)
-                .addGap(49, 49, 49)
-                .addComponent(ps_tokenID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(ps_btnScanToken)
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        readToken.add(jLabel9);
+        jLabel9.setBounds(200, 10, 440, 140);
+
+        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/back.png"))); // NOI18N
+        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton1ActionPerformed(evt);
+            }
+        });
+        readToken.add(jToggleButton1);
+        jToggleButton1.setBounds(700, 20, 30, 30);
+
+        jToggleButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/close.png"))); // NOI18N
+        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton2ActionPerformed(evt);
+            }
+        });
+        readToken.add(jToggleButton2);
+        jToggleButton2.setBounds(740, 20, 30, 30);
+
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        readToken.add(jLabel6);
+        jLabel6.setBounds(0, 0, 800, 500);
 
         readBalance.setPreferredSize(new java.awt.Dimension(527, 358));
+        readBalance.setLayout(null);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Current Balance");
+        readBalance.add(jLabel3);
+        jLabel3.setBounds(350, 170, 190, 40);
 
+        ps_currentBalance.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        readBalance.add(ps_currentBalance);
+        ps_currentBalance.setBounds(330, 220, 170, 30);
+
+        ps_btnPayWithCash.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_btnPayWithCash.setText("Pay With Cash");
         ps_btnPayWithCash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_btnPayWithCashActionPerformed(evt);
             }
         });
+        readBalance.add(ps_btnPayWithCash);
+        ps_btnPayWithCash.setBounds(180, 290, 150, 50);
 
+        ps_btnPayWithCard.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_btnPayWithCard.setText("Pay With Card");
         ps_btnPayWithCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_btnPayWithCardActionPerformed(evt);
             }
         });
+        readBalance.add(ps_btnPayWithCard);
+        ps_btnPayWithCard.setBounds(340, 290, 150, 50);
 
+        ps_btnExitAccount.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_btnExitAccount.setText("Exit Account");
         ps_btnExitAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_btnExitAccountActionPerformed(evt);
             }
         });
+        readBalance.add(ps_btnExitAccount);
+        ps_btnExitAccount.setBounds(500, 290, 150, 50);
 
-        javax.swing.GroupLayout readBalanceLayout = new javax.swing.GroupLayout(readBalance);
-        readBalance.setLayout(readBalanceLayout);
-        readBalanceLayout.setHorizontalGroup(
-            readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, readBalanceLayout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addComponent(ps_btnPayWithCash)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
-                .addComponent(ps_btnPayWithCard)
-                .addGap(74, 74, 74)
-                .addComponent(ps_btnExitAccount)
-                .addGap(39, 39, 39))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, readBalanceLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, readBalanceLayout.createSequentialGroup()
-                        .addComponent(ps_currentBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(171, 171, 171))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, readBalanceLayout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGap(224, 224, 224))))
-        );
-        readBalanceLayout.setVerticalGroup(
-            readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(readBalanceLayout.createSequentialGroup()
-                .addContainerGap(83, Short.MAX_VALUE)
-                .addComponent(jLabel3)
-                .addGap(49, 49, 49)
-                .addComponent(ps_currentBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(52, 52, 52)
-                .addGroup(readBalanceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ps_btnPayWithCard)
-                    .addComponent(ps_btnPayWithCash)
-                    .addComponent(ps_btnExitAccount))
-                .addGap(117, 117, 117))
-        );
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        readBalance.add(jLabel12);
+        jLabel12.setBounds(200, 10, 440, 140);
+
+        jToggleButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/back.png"))); // NOI18N
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
+        readBalance.add(jToggleButton3);
+        jToggleButton3.setBounds(700, 20, 30, 30);
+
+        jToggleButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/close.png"))); // NOI18N
+        jToggleButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton4ActionPerformed(evt);
+            }
+        });
+        readBalance.add(jToggleButton4);
+        jToggleButton4.setBounds(740, 20, 30, 30);
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        readBalance.add(jLabel11);
+        jLabel11.setBounds(0, 0, 800, 500);
 
         main.setMinimumSize(new java.awt.Dimension(527, 406));
+        main.setLayout(null);
 
+        ps_btnMainNewUser.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_btnMainNewUser.setText("Register as a New User");
         ps_btnMainNewUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_btnMainNewUserActionPerformed(evt);
             }
         });
+        main.add(ps_btnMainNewUser);
+        ps_btnMainNewUser.setBounds(290, 200, 230, 70);
 
+        ps_mainAddPayment.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_mainAddPayment.setText("Top Up Account");
         ps_mainAddPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_mainAddPaymentActionPerformed(evt);
             }
         });
+        main.add(ps_mainAddPayment);
+        ps_mainAddPayment.setBounds(310, 300, 200, 70);
 
-        jLabel4.setText("Transit Authority");
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        main.add(jLabel14);
+        jLabel14.setBounds(200, 10, 440, 140);
 
-        javax.swing.GroupLayout mainLayout = new javax.swing.GroupLayout(main);
-        main.setLayout(mainLayout);
-        mainLayout.setHorizontalGroup(
-            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(mainLayout.createSequentialGroup()
-                .addGap(75, 75, 75)
-                .addComponent(ps_btnMainNewUser)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(ps_mainAddPayment)
-                .addGap(130, 130, 130))
-            .addGroup(mainLayout.createSequentialGroup()
-                .addGap(202, 202, 202)
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        mainLayout.setVerticalGroup(
-            mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainLayout.createSequentialGroup()
-                .addGap(71, 71, 71)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 213, Short.MAX_VALUE)
-                .addGroup(mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ps_btnMainNewUser)
-                    .addComponent(ps_mainAddPayment))
-                .addGap(85, 85, 85))
-        );
+        jToggleButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/back.png"))); // NOI18N
+        jToggleButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton5ActionPerformed(evt);
+            }
+        });
+        main.add(jToggleButton5);
+        jToggleButton5.setBounds(700, 20, 30, 30);
+
+        jToggleButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/close.png"))); // NOI18N
+        jToggleButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton6ActionPerformed(evt);
+            }
+        });
+        main.add(jToggleButton6);
+        jToggleButton6.setBounds(740, 20, 30, 30);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        main.add(jLabel13);
+        jLabel13.setBounds(0, 0, 800, 500);
 
         NewAccount.setMinimumSize(new java.awt.Dimension(527, 406));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("User Details"));
+        jPanel1.setLayout(null);
 
-        jLabel5.setText("User ID");
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("User ID         :");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(280, 170, 130, 22);
 
+        ps_na_UserID.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_na_UserID.setText("User ID");
+        jPanel1.add(ps_na_UserID);
+        ps_na_UserID.setBounds(440, 170, 60, 22);
 
-        jLabel7.setText("User Name");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel7.setText("User Name     :");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(280, 210, 140, 22);
 
+        ps_na_username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_na_username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_na_usernameActionPerformed(evt);
             }
         });
+        jPanel1.add(ps_na_username);
+        ps_na_username.setBounds(440, 210, 130, 28);
 
-        jLabel8.setText("Token ID");
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel8.setText("Token ID       :");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(280, 290, 140, 22);
 
+        ps_na_TokenID.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_na_TokenID.setText("Token ID");
+        jPanel1.add(ps_na_TokenID);
+        ps_na_TokenID.setBounds(440, 290, 74, 22);
 
-        jLabel10.setText("amount");
+        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel10.setText("Amount         :");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(280, 330, 130, 22);
 
+        ps_na_amount.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(ps_na_amount);
+        ps_na_amount.setBounds(440, 320, 130, 28);
+
+        ps_na_btnproceed.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         ps_na_btnproceed.setText("Proceed");
         ps_na_btnproceed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ps_na_btnproceedActionPerformed(evt);
             }
         });
+        jPanel1.add(ps_na_btnproceed);
+        ps_na_btnproceed.setBounds(370, 380, 95, 31);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel8)
-                    .addComponent(jLabel10))
-                .addGap(42, 42, 42)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ps_na_TokenID)
-                    .addComponent(ps_na_UserID)
-                    .addComponent(ps_na_username, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
-                    .addComponent(ps_na_amount))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(285, Short.MAX_VALUE)
-                .addComponent(ps_na_btnproceed)
-                .addGap(159, 159, 159))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(ps_na_UserID))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(ps_na_username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(ps_na_TokenID))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(ps_na_amount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(86, 86, 86)
-                .addComponent(ps_na_btnproceed)
-                .addContainerGap(111, Short.MAX_VALUE))
-        );
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(200, 10, 440, 140);
+
+        jToggleButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/back.png"))); // NOI18N
+        jToggleButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton7ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton7);
+        jToggleButton7.setBounds(700, 20, 30, 30);
+
+        jToggleButton8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/close.png"))); // NOI18N
+        jToggleButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton8ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jToggleButton8);
+        jToggleButton8.setBounds(740, 20, 30, 30);
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel4.setText("Password       :");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(280, 250, 140, 22);
+
+        jTextField1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jPanel1.add(jTextField1);
+        jTextField1.setBounds(440, 250, 130, 28);
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(0, 0, 800, 500);
 
         javax.swing.GroupLayout NewAccountLayout = new javax.swing.GroupLayout(NewAccount);
         NewAccount.setLayout(NewAccountLayout);
         NewAccountLayout.setHorizontalGroup(
             NewAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
         );
         NewAccountLayout.setVerticalGroup(
             NewAccountLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(NewAccountLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         jLayeredPane1.setLayer(jLabel1, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -325,13 +383,13 @@ public class PayStationUI extends javax.swing.JFrame {
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(readToken, javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE)
+            .addComponent(readToken, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(221, 221, 221))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(readBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 954, Short.MAX_VALUE))
+                .addComponent(readBalance, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE))
             .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jLayeredPane1Layout.createSequentialGroup()
                     .addGap(213, 213, 213)
@@ -346,7 +404,7 @@ public class PayStationUI extends javax.swing.JFrame {
         jLayeredPane1Layout.setVerticalGroup(
             jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jLayeredPane1Layout.createSequentialGroup()
-                .addGap(0, 334, Short.MAX_VALUE)
+                .addGap(0, 144, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(readToken, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -378,6 +436,7 @@ public class PayStationUI extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void ps_btnExitAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ps_btnExitAccountActionPerformed
@@ -471,6 +530,50 @@ public class PayStationUI extends javax.swing.JFrame {
         accountlist.addAccount(account);
     }//GEN-LAST:event_ps_na_btnproceedActionPerformed
 
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton2ActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void jToggleButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton4ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton4ActionPerformed
+
+    private void jToggleButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton5ActionPerformed
+        // TODO add your handling code here:
+        new login().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton5ActionPerformed
+
+    private void jToggleButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton6ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton6ActionPerformed
+
+    private void jToggleButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton7ActionPerformed
+        // TODO add your handling code here:
+        new main().setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton7ActionPerformed
+
+    private void jToggleButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton8ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_jToggleButton8ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -517,14 +620,31 @@ public class PayStationUI extends javax.swing.JFrame {
     private javax.swing.JPanel NewAccount;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JToggleButton jToggleButton2;
+    private javax.swing.JToggleButton jToggleButton3;
+    private javax.swing.JToggleButton jToggleButton4;
+    private javax.swing.JToggleButton jToggleButton5;
+    private javax.swing.JToggleButton jToggleButton6;
+    private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToggleButton jToggleButton8;
     private javax.swing.JPanel main;
     private javax.swing.JButton ps_btnExitAccount;
     private javax.swing.JButton ps_btnMainNewUser;

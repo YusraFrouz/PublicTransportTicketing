@@ -2,7 +2,15 @@ package views;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.*;
+import models.Employee;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,8 +28,39 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
+    
+    ArrayList <Employee> employees = new ArrayList<Employee>();
+    public static final File file = new File("Employee.txt");
+  
+    public ArrayList Deserialize(File file){
+        
+        ArrayList d_arraylist = null;
+        try{
+            FileInputStream fis = new FileInputStream(file);
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            
+            d_arraylist = (ArrayList)ois.readObject();
+            fis.close();
+            System.out.println("Deserialized");
+            System.out.println(d_arraylist);
+            
+        }
+        catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        } 
+        
+        return d_arraylist;
+    }
     public login() {
         initComponents();
+        
+        
     }
 
     /**
@@ -130,6 +169,7 @@ public class login extends javax.swing.JFrame {
 
     private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jToggleButton2ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -143,10 +183,41 @@ public class login extends javax.swing.JFrame {
         String username = txtusername.getText();
         String password = txtpwd.getText();
 
-        if (username == null || password == null ) {
+        if (username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill All Fileds!");
         }
-        
+        else{
+                Employee empLogin = null;
+                empLogin = Employee.getUsername(username);
+            try{
+                ArrayList <Employee> employeesArr = new ArrayList<Employee>();
+                employeesArr = Deserialize(file);
+                
+                FileInputStream fis = new FileInputStream(file);
+                ObjectInputStream ois = new ObjectInputStream(fis);
+
+                empLogin = (Employee)ois.readObject();
+                fis.close();
+                System.out.println("Deserialized");
+                System.out.println(empLogin);
+
+            }
+            catch(FileNotFoundException e){
+                e.printStackTrace();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+            catch (ClassNotFoundException ex) {
+                ex.printStackTrace();
+            }
+               if(txtusername.getText().equals(empLogin.getUsername(username)) && txtpwd.getText().equals(empLogin.getPassword())){
+                   System.out.println("Succcessfully logged in");
+               }else{
+                   System.out.println("Invalid username/password");
+                   System.out.println(empLogin.getName()+" "+empLogin.getUsername()+" "+empLogin.getPassword());
+               }
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
