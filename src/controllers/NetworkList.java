@@ -24,6 +24,7 @@ import models.Network;
 public class NetworkList extends ArrayList<Network>{
     private Network network;
     ArrayList<Network> networkArr = new ArrayList<Network>();
+    ArrayList<String> networkArr1 = new ArrayList<String>();
     public static final File file = new File("Networks.txt");
     private int count;
     private String type;
@@ -33,37 +34,53 @@ public class NetworkList extends ArrayList<Network>{
     }
     
     
-    public void addRoute(Network pNetwork){
+    public void addNetwork(Network pNetwork){
         this.network = pNetwork; 
         networkArr = Deserialize(file);
         type = network.getNetworkType();
+        
         for(Network i : networkArr){
-           count++;
-        }
-        for(Network i : networkArr){
-           if(i.getNetworkType().equals(type))
+           if(type.equals(i.getNetworkType()))
            {
                DisplayMessage.display("Network already exists!");
                System.out.println("exists");
                break;
+              
            } 
            else
            {
                network.setNetworkID(count+1);
                networkArr.add(network);
+               DisplayMessage.display("Network added successfully!");
                System.out.println("added");
                break;
            }    
         }
+               
         Serialize(networkArr);
       
     }
     
-    public ArrayList getRoutes ()
+    
+    
+    public ArrayList getNetworks ()
     {
         networkArr = Deserialize(file);
         return networkArr;
     }
+    
+    
+    public ArrayList getNetworkTypes (){
+    networkArr = Deserialize(file);
+    for (Network i : networkArr){
+        networkArr1.add(i.getNetworkType());
+        System.out.println(i.getNetworkType());
+        
+    }
+    return networkArr1;
+        
+}
+    
     
     public void Serialize( ArrayList arraylist){
         try{
