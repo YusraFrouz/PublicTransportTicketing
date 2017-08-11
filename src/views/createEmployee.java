@@ -19,6 +19,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import models.Employee;
+import models.MyArrayList;
 
 
 /**
@@ -30,7 +31,7 @@ public class createEmployee extends javax.swing.JFrame {
     ArrayList <Employee> employees = new ArrayList<Employee>();
     public static final File file = new File("Employee.txt");
     
-    public void Serialize( ArrayList arraylist){
+    public void Serialize( MyArrayList arraylist){
         try{
             FileOutputStream fos = new FileOutputStream(file);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
@@ -46,14 +47,15 @@ public class createEmployee extends javax.swing.JFrame {
             e.printStackTrace();
         }
     }
-  public ArrayList Deserialize(File filename){
+    
+    public ArrayList Deserialize(File file){
         
         ArrayList d_arraylist = null;
         try{
-            FileInputStream fis = new FileInputStream(filename);
+            FileInputStream fis = new FileInputStream(file);
             ObjectInputStream ois = new ObjectInputStream(fis);
             
-            d_arraylist = (ArrayList)ois.readObject();
+            d_arraylist = (ArrayList)(ArrayList)ois.readObject();
             fis.close();
             System.out.println("Deserialized");
             System.out.println(d_arraylist);
@@ -68,7 +70,9 @@ public class createEmployee extends javax.swing.JFrame {
         catch (ClassNotFoundException ex) {
             ex.printStackTrace();
         } 
-        
+        catch(ClassCastException ex2){
+            ex2.printStackTrace();
+        }
         return d_arraylist;
     }
     
@@ -244,31 +248,30 @@ public class createEmployee extends javax.swing.JFrame {
         String username = txtusername.getText();
         String pwd = txtpwd.getText();
 
-        if (name.isEmpty() || address.isEmpty() || username.isEmpty() || pwd.isEmpty()) {
+        if (empType.equals("Select") || name.isEmpty() || address.isEmpty() || username.isEmpty() || pwd.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill All The Fileds!");
                    
         }else{
             Employee emp = new Employee(empType, name, address, username, pwd);
             
-            ArrayList <Employee> employeesArr = new ArrayList<Employee>();
-            employeesArr = Deserialize(file);
-            emp.setEmployeeCount(employeesArr.size());
+            MyArrayList <Employee> employeesArr = new MyArrayList<Employee>();
+            ArrayList <Employee> employeesArr2 = new ArrayList<Employee>();
+            employeesArr2 = Deserialize(file);
+            emp.setEmployeeCount(employeesArr2.size());
             employeesArr.add(emp);
             
             Serialize(employeesArr);
-            JOptionPane.showMessageDialog(null, "Account Succesfully Created! Please Click Ok to Login ");
+            JOptionPane.showMessageDialog(null, "Account Succesfully Created! Please Click OK to Login ");
             new login().setVisible(true);
             this.dispose();
             
             System.out.println("Checking again");
-            for (Employee i : employeesArr){
-                System.out.println("id:" + i.getID() + "name:" + i.getName() + "password:" + i.getPassword());
-            }
-            
-            
-        }
-        
-        
+            for (int i=0;i<employeesArr.size();i++){
+                Employee temp = (Employee)employeesArr.get(i);
+                System.out.println("id:" + " " + temp.getID() + " " + "Type:" + " " + temp.getEmployeeType() + " " + 
+                   "name:" + " " + temp.getName() + " " + "username:" + " " + temp.getUsername() + " " + "password:" + " " + temp.getPassword());
+            }           
+        } 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtpwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtpwdActionPerformed

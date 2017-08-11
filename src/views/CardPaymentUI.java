@@ -107,9 +107,9 @@ public class CardPaymentUI extends javax.swing.JFrame {
         EnterAmount.setLayout(null);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Card Payment");
+        jLabel2.setText("CARD PAYMENT");
         EnterAmount.add(jLabel2);
-        jLabel2.setBounds(380, 160, 180, 22);
+        jLabel2.setBounds(350, 160, 180, 22);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Enter Amount :");

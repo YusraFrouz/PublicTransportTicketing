@@ -11,14 +11,13 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 import models.Employee;
+import models.MyArrayList;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-
 /**
  *
  * @author Yusra Frouz
@@ -28,39 +27,35 @@ public class login extends javax.swing.JFrame {
     /**
      * Creates new form login
      */
-    
-    ArrayList <Employee> employees = new ArrayList<Employee>();
+    ArrayList<Employee> employees = new ArrayList<Employee>();
     public static final File file = new File("Employee.txt");
-  
-    public ArrayList Deserialize(File file){
-        
+
+    public ArrayList Deserialize(File filename) {
+
         ArrayList d_arraylist = null;
-        try{
-            FileInputStream fis = new FileInputStream(file);
+        try {
+            FileInputStream fis = new FileInputStream(filename);
             ObjectInputStream ois = new ObjectInputStream(fis);
-            
-            d_arraylist = (ArrayList)ois.readObject();
+
+            d_arraylist = (ArrayList) ois.readObject();
             fis.close();
             System.out.println("Deserialized");
             System.out.println(d_arraylist);
-            
-        }
-        catch(FileNotFoundException e){
+
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }
-        catch (IOException e) {
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-        catch (ClassNotFoundException ex) {
+        } catch (ClassNotFoundException ex) {
             ex.printStackTrace();
-        } 
-        
+        }
+
         return d_arraylist;
     }
+
     public login() {
         initComponents();
-        
-        
+
     }
 
     /**
@@ -79,9 +74,11 @@ public class login extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         txtusername = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txtpwd = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        txtpwd = new javax.swing.JPasswordField();
+        jLabel2 = new javax.swing.JLabel();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -108,9 +105,9 @@ public class login extends javax.swing.JFrame {
         jToggleButton2.setBounds(740, 20, 30, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Username  :");
+        jLabel4.setText("Username           :");
         getContentPane().add(jLabel4);
-        jLabel4.setBounds(290, 200, 110, 22);
+        jLabel4.setBounds(250, 220, 160, 22);
 
         jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton1.setText("Log In");
@@ -120,7 +117,7 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(380, 290, 85, 40);
+        jButton1.setBounds(380, 310, 85, 40);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton2.setText("Create Account");
@@ -130,20 +127,16 @@ public class login extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(340, 370, 180, 40);
+        jButton2.setBounds(340, 390, 180, 40);
 
-        txtusername.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtusername.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         getContentPane().add(txtusername);
-        txtusername.setBounds(430, 200, 130, 28);
+        txtusername.setBounds(430, 220, 130, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel5.setText("Password   :");
+        jLabel5.setText("Password            :");
         getContentPane().add(jLabel5);
-        jLabel5.setBounds(290, 240, 110, 22);
-
-        txtpwd.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        getContentPane().add(txtpwd);
-        txtpwd.setBounds(430, 240, 130, 28);
+        jLabel5.setBounds(250, 260, 170, 22);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/Logo_1.png"))); // NOI18N
         getContentPane().add(jLabel3);
@@ -152,13 +145,28 @@ public class login extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("or");
         getContentPane().add(jLabel6);
-        jLabel6.setBounds(420, 330, 20, 30);
+        jLabel6.setBounds(420, 350, 20, 30);
+
+        txtpwd.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        getContentPane().add(txtpwd);
+        txtpwd.setBounds(430, 260, 130, 30);
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel2.setText("Employee Type    :");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(250, 180, 160, 30);
+
+        jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select", "Manager", "Conductor" }));
+        getContentPane().add(jComboBox1);
+        jComboBox1.setBounds(430, 180, 130, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
         getContentPane().add(jLabel1);
         jLabel1.setBounds(0, 0, 800, 500);
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
@@ -180,43 +188,42 @@ public class login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String empType = jComboBox1.getSelectedItem().toString();
         String username = txtusername.getText();
         String password = txtpwd.getText();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (empType.equals("Select") || username.isEmpty() || password.isEmpty()) {
             JOptionPane.showMessageDialog(null, "Please Fill All Fileds!");
-        }
-        else{
-                Employee empLogin = null;
-                empLogin = Employee.getUsername(username);
-            try{
-                ArrayList <Employee> employeesArr = new ArrayList<Employee>();
-                employeesArr = Deserialize(file);
-                
-                FileInputStream fis = new FileInputStream(file);
-                ObjectInputStream ois = new ObjectInputStream(fis);
+        } else {
+            MyArrayList<Employee> employeesArr = null;
+            employeesArr = new MyArrayList<Employee>();
+            employeesArr = (MyArrayList<Employee>) Deserialize(file);
 
-                empLogin = (Employee)ois.readObject();
-                fis.close();
-                System.out.println("Deserialized");
-                System.out.println(empLogin);
+            try {
+                boolean login = false;
 
+                for (int i = 0; i < employeesArr.size(); i++) {
+                    Employee temp = (Employee) employeesArr.get(i);
+                    if (txtusername.getText().equals(temp.getUsername()) && txtpwd.getText().equals(temp.getPassword())) {
+                        login = true;
+                    }
+                }
+                if (login == true) {
+                    JOptionPane.showMessageDialog(null, "Successfully Logged In");
+                    if (empType.equals("Manager")) {
+                        new managerMain().setVisible(true);
+                        this.dispose();
+                    } else if (empType.equals("Conductor")) {
+                        new conductorShiftSelect().setVisible(true);
+                        this.dispose();
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Invalid Username or Password");
+                }
+            } catch (NullPointerException exc) {
+                exc.printStackTrace();
             }
-            catch(FileNotFoundException e){
-                e.printStackTrace();
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-            }
-            catch (ClassNotFoundException ex) {
-                ex.printStackTrace();
-            }
-               if(txtusername.getText().equals(empLogin.getUsername(username)) && txtpwd.getText().equals(empLogin.getPassword())){
-                   System.out.println("Succcessfully logged in");
-               }else{
-                   System.out.println("Invalid username/password");
-                   System.out.println(empLogin.getName()+" "+empLogin.getUsername()+" "+empLogin.getPassword());
-               }
+
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -258,16 +265,16 @@ public class login extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JTextField txtpwd;
+    private javax.swing.JPasswordField txtpwd;
     private javax.swing.JTextField txtusername;
     // End of variables declaration//GEN-END:variables
 }
-
-

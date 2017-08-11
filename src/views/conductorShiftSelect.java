@@ -32,7 +32,6 @@ public class conductorShiftSelect extends javax.swing.JFrame {
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         selectnetwork = new javax.swing.JComboBox<>();
         selectroute = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
@@ -69,12 +68,7 @@ public class conductorShiftSelect extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel1.setText("Enter Shift Details");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(350, 190, 150, 22);
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("//get emp name here");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(320, 230, 250, 22);
+        jLabel1.setBounds(340, 220, 150, 22);
 
         selectnetwork.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         selectnetwork.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "-- Select Network --" }));
@@ -159,7 +153,6 @@ public class conductorShiftSelect extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;

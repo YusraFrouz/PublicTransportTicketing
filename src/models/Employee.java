@@ -59,6 +59,10 @@ public class Employee implements Serializable{
         public String getAddress(){
             return EmployeeName;
         }
+        
+        public String getUsername(){
+            return Username;
+        }
 
         public void setAddress(String EmployeeAddress){
             this.EmployeeAddress = EmployeeAddress;
@@ -79,5 +83,14 @@ public class Employee implements Serializable{
         public void setPassword(String Password){
             this.Password = Password;
         }
+
+        public String getEmployeeType() {
+            return EmployeeType;
+        }
+
+        public void setEmployeeType(String EmployeeType) {
+            this.EmployeeType = EmployeeType;
+        }
+        
     }
 

@@ -33,11 +33,12 @@ public class conductorCheckToken extends javax.swing.JFrame {
         jToggleButton2 = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jLabel4 = new javax.swing.JLabel();
         jTextField2 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
+        jComboBox3 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -69,38 +70,43 @@ public class conductorCheckToken extends javax.swing.JFrame {
         jToggleButton2.setBounds(740, 20, 30, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Enter Journey          :");
+        jLabel2.setText("Enter Journey  :");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(60, 250, 190, 22);
+        jLabel2.setBounds(80, 310, 190, 22);
 
         jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setText("Start Journey");
+        jButton2.setText("Confirm");
         jPanel1.add(jButton2);
-        jButton2.setBounds(390, 310, 150, 30);
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("Enter Token Number :");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(60, 190, 190, 22);
+        jButton2.setBounds(400, 370, 120, 30);
 
         jTextField2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(jTextField2);
-        jTextField2.setBounds(260, 190, 250, 28);
+        jTextField2.setBounds(420, 250, 170, 28);
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jButton3.setText("Chcek Balance");
         jPanel1.add(jButton3);
-        jButton3.setBounds(530, 190, 160, 30);
+        jButton3.setBounds(240, 250, 160, 30);
 
         jComboBox1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Start Station" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Route" }));
         jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(260, 250, 190, 28);
+        jComboBox1.setBounds(220, 310, 140, 28);
 
         jComboBox2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select End Station" }));
         jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(470, 250, 190, 28);
+        jComboBox2.setBounds(480, 340, 190, 28);
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel5.setText("ADD JOURNEY");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(350, 190, 190, 22);
+
+        jComboBox3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Select Start Station" }));
+        jPanel1.add(jComboBox3);
+        jComboBox3.setBounds(370, 310, 190, 28);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/extra/background.png"))); // NOI18N
         jPanel1.add(jLabel1);
@@ -173,10 +179,11 @@ public class conductorCheckToken extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JToggleButton jToggleButton1;
