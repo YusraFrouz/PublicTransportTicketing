@@ -40,10 +40,29 @@ public class AccountList extends ArrayList<Account> {
         accArr.add(account);
         Serialize(accArr);
     }
+<<<<<<< HEAD
 
     public ArrayList getAllAccounts() {
         accArr = Deserialize(file);
         return accArr;
+=======
+    
+    public void updateBalance(double newAmount,String tokenID){
+        accArr = Deserialize(file);
+        for (Account i : accArr){
+            if (i.getToken().getTokenID().equalsIgnoreCase(tokenID)){
+                double currentBalance = i.getBalance();
+                i.setBalance(newAmount+currentBalance);
+                Serialize(accArr);
+            }
+        }
+        
+    }
+    
+    public ArrayList getAllAccounts(){
+       accArr = Deserialize(file);
+       return accArr;
+>>>>>>> d3702ce612f71740135f7f56da705e38d3239d13
     }
 
     public boolean findAccountByID(String passengerId) {
@@ -56,8 +75,39 @@ public class AccountList extends ArrayList<Account> {
         }
         return false;
     }
+<<<<<<< HEAD
 
     public ArrayList getAccountByID(String ID) {
+=======
+    
+    public boolean findAccountByTokenID (String ID)
+    {
+        //books2 = null;
+        accArr = Deserialize(file);
+        for (Account i : accArr){
+            if (i.getToken().getTokenID().equalsIgnoreCase(ID)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public ArrayList getAccountByTokenID (String ID)
+    {
+        accArr2 = null;
+        accArr = Deserialize(file);
+        for (Account i : accArr){
+            if (i.getToken().getTokenID().equalsIgnoreCase(ID)){
+                accArr2.add(i);
+                return accArr2;
+            }
+        }
+        return accArr2;
+    }
+    
+    public ArrayList getAccountByID (String ID)
+    {
+>>>>>>> d3702ce612f71740135f7f56da705e38d3239d13
         accArr2 = null;
         accArr = Deserialize(file);
         for (Account i : accArr) {

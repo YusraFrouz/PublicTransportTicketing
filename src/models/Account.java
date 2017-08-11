@@ -11,7 +11,7 @@ import static views.CardPaymentUI.amount;
 
 /**
  *
- * @author Yusra Frouz
+ * @author Nadya Sirimanna
  */
 public class Account implements Serializable{
     private token tokenList[];
@@ -43,6 +43,14 @@ public class Account implements Serializable{
     
     public float deductBalance(float charge){
         return charge;
+    }
+
+    public token getToken() {
+        return token;
+    }
+
+    public void setToken(token token) {
+        this.token = token;
     }
     
     public token[] getTokenList() {

@@ -45,6 +45,10 @@ public class token implements Serializable {
         this.tokenID = tokenID;
     }
 
+    public boolean equalsIgnoreCase(token token) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
     
     
